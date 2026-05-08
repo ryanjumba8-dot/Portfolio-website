@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Jordan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">jordan<span>.dev</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html" class="nav-cta active">Contact</a>
+  </nav>
+  <button class="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html" class="active">Contact</a>
+</nav>
+
+<div class="page-content">
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="section-header fade-in">
+        <div class="section-label">Get in touch</div>
+        <h1 class="section-title">Contact Me</h1>
+        <p class="section-desc">
+          Have a project in mind, a data challenge to solve, or just want to connect? I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: info -->
+        <div class="fade-in fade-in-delay-1">
+          <h3 style="font-size:1rem; font-weight:500; color:var(--text-primary); margin-bottom:8px;">Let's work together</h3>
+          <p style="font-size:0.9375rem; color:var(--text-secondary); line-height:1.7; font-weight:300;">
+            I'm currently open to freelance projects, consulting engagements, and full-time roles. Whether you need a one-off analysis or a long-term data partner, I'm happy to explore how I can help.
+          </p>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="label">Email</div>
+              <div class="value">ryanjumba8@gmail.com</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="label">Location</div>
+              <div class="value">Open to remote &amp; on-site</div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="label">Response time</div>
+              <div class="value">Usually within 24 hours</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="form-card fade-in fade-in-delay-2">
+          <form id="contactForm">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project or what you need help with..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+              <span id="btn-text">Send Message</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </button>
+
+          </form>
+
+          <p id="form-success" style="display:none; margin-top:16px; font-size:0.9rem; color:var(--sky); text-align:center; font-family:var(--font-mono);">
+            ✓ Message sent! I'll be in touch soon.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Jordan. Built with purpose.</p>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function() {
+  const header = document.querySelector('.site-header');
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Form demo submit
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btn-text');
+    btn.textContent = 'Sending...';
+    setTimeout(() => {
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }, 1200);
+  });
+})();
+</script>
+
+</body>
+</html>
